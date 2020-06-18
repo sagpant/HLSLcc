@@ -1445,7 +1445,7 @@ void ToGLSL::TranslateVariableNameWithMask(bstring glsl, const Operand* psOperan
         }
         case OPERAND_TYPE_INPUT_PATCH_CONSTANT:
         {
-            const ShaderInfo::InOutSignature* psIn;
+            const ShaderInfo::InOutSignature* psIn = nullptr;
             psContext->psShader->sInfo.GetPatchConstantSignatureFromRegister(psOperand->ui32RegisterNumber, psOperand->GetAccessMask(), &psIn);
             *piRebase = psIn->iRebase;
             switch (psIn->eSystemValueType)
