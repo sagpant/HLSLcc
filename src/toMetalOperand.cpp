@@ -1073,7 +1073,7 @@ std::string ToMetal::TranslateVariableName(const Operand* psOperand, uint32_t ui
         }
         case OPERAND_TYPE_INPUT_PATCH_CONSTANT:
         {
-            const ShaderInfo::InOutSignature* psIn;
+            const ShaderInfo::InOutSignature* psIn = nullptr;
             psContext->psShader->sInfo.GetPatchConstantSignatureFromRegister(psOperand->ui32RegisterNumber, psOperand->GetAccessMask(), &psIn);
             *piRebase = psIn->iRebase;
             switch (psIn->eSystemValueType)
